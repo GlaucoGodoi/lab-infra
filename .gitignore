@@ -1,2 +1,4 @@
 .env
 .env.old
+sites
+docker/volumes/functions_backup_*
