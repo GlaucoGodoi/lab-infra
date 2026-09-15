@@ -1,0 +1,9 @@
+{
+  "imports": {
+    "@supabase/functions-js": "jsr:@supabase/functions-js@^2",
+    "@supabase/server": "npm:@supabase/server@^1",
+    "zod": "npm:zod@^3.23.8",
+    "@supabase/supabase-js": "npm:@supabase/supabase-js@^2.45.4",
+    "@std/crypto/timing-safe-equal": "jsr:@std/crypto@^1.0.3/timing-safe-equal"
+  }
+}

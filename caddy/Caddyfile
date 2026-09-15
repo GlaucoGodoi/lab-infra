@@ -1,0 +1,46 @@
+(security_headers) {
+	header {
+		-Server
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		X-Frame-Options SAMEORIGIN
+		Strict-Transport-Security "max-age=31536000"
+	}
+}
+
+base.lab.p18.pro {
+	import security_headers
+	encode zstd gzip
+	log {
+		format json
+	}
+	reverse_proxy api-gw:8000
+}
+
+cylon.lab.p18.pro {
+	import security_headers
+	encode zstd gzip
+	log {
+		format json
+	}
+	reverse_proxy paperclip:3100
+}
+
+runner.lab.p18.pro {
+	import security_headers
+	encode zstd gzip
+	log {
+		format json
+	}
+	reverse_proxy n8n:5678
+}
+
+lab.p18.pro {
+	import security_headers
+	encode zstd gzip
+	log {
+		format json
+	}
+	reverse_proxy approver:80
+}

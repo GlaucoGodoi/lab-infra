@@ -1,0 +1,1 @@
+DROP SEQUENCE IF EXISTS public.chat_telegram_draft_ids CASCADE;
